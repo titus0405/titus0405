@@ -1,0 +1,9 @@
+# Direct runtime dependencies for bot-tele, pinned to the versions resolved in uv.lock.
+# Install with: pip install -r requirements.txt
+openai==2.45.0
+openpyxl==3.1.5
+pypdf==6.14.2
+python-docx==1.2.0
+python-dotenv==1.2.2
+python-telegram-bot==22.8
+xlrd==2.0.2
