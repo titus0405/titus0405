@@ -23,7 +23,15 @@ def extract_text(document: Document, raw: bytes) -> str:
     Raises `UnsupportedFileError` for unknown extensions and `DocumentReadError`
     when a known format cannot be parsed.
     """
-    name = document.file_name or ""
+    return extract_text_from_bytes(document.file_name or "", raw)
+
+
+def extract_text_from_bytes(name: str, raw: bytes) -> str:
+    """Extract plain text from raw file bytes, using `name` for the extension.
+
+    Shared by the Telegram upload path and the offline ``Dt/`` loader so both
+    use identical parsing logic for the same file types.
+    """
     suffix = Path(name).suffix.lower()
     if suffix not in SUPPORTED_SUFFIXES:
         supported = ", ".join(sorted(SUPPORTED_SUFFIXES))

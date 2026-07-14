@@ -16,7 +16,14 @@ from .config import Settings
 from .conversation import ChatMessage, Role
 from .errors import ModelError
 
-SYSTEM_PROMPT: Final = "You are a helpful assistant inside a Telegram bot."
+SYSTEM_PROMPT: Final = (
+    "Anda adalah asisten resmi di dalam bot Telegram untuk kebijakan kesehatan "
+    "KMK (Keputusan Menteri Kesehatan). Jawablah setiap pertanyaan HANYA "
+    "berdasarkan dokumen resmi yang disertakan. Cantumkan nama sumber bila "
+    "relevan. Apabila informasi tidak ditemukan di dokumen, nyatakan dengan "
+    "jujur bahwa informasi tidak tersedia dalam dokumen, dan jangan menggunakan "
+    "pengetahuan umum."
+)
 
 DOCUMENT_ANALYSIS_PROMPT: Final = (
     "You are a helpful assistant inside a Telegram bot. "
@@ -48,20 +55,40 @@ class ChatClient:
             default_headers=headers,
         )
 
-    async def complete(self, messages: Sequence[ChatMessage]) -> str:
-        """Send the conversation to the model and return its reply text."""
+    async def complete(
+        self, messages: Sequence[ChatMessage], context: str = ""
+    ) -> str:
+        """Send the conversation to the model, grounded in `context`, and reply.
+
+        `context` is the retrieved Dt/ document passages; when present it is
+        appended to the system prompt so the model answers from the official
+        source instead of its general knowledge.
+        """
+        system = SYSTEM_PROMPT
+        if context:
+            system = (
+                SYSTEM_PROMPT
+                + "\n\nBerikut adalah dokumen resmi (folder Dt/) yang wajib "
+                "dijadikan dasar jawaban:\n"
+                + context
+            )
         payload: list[ChatCompletionMessageParam] = [
-            ChatCompletionSystemMessageParam(role="system", content=SYSTEM_PROMPT),
+            ChatCompletionSystemMessageParam(role="system", content=system),
             *(self._to_param(msg) for msg in messages),
         ]
         return await self._request(payload)
 
-    async def analyze_document(self, text: str) -> str:
+    async def analyze_document(self, text: str, context: str = "") -> str:
         """Analyze an uploaded document's text and return a summary."""
+        prompt = DOCUMENT_ANALYSIS_PROMPT
+        if context:
+            prompt = (
+                DOCUMENT_ANALYSIS_PROMPT
+                + "\n\nSebagai rujukan tambahan, berikut dokumen resmi (Dt/):\n"
+                + context
+            )
         payload: list[ChatCompletionMessageParam] = [
-            ChatCompletionSystemMessageParam(
-                role="system", content=DOCUMENT_ANALYSIS_PROMPT
-            ),
+            ChatCompletionSystemMessageParam(role="system", content=prompt),
             ChatCompletionUserMessageParam(role="user", content=text),
         ]
         return await self._request(payload)

@@ -21,8 +21,8 @@ from .conversation import ChatId, ChatMessage
 from .documents import extract_text
 from .errors import DocumentReadError, ModelError, UnsupportedFileError
 from .events import ChatEvent, EventBus, EventType, now
+from .knowledge import KnowledgeBase
 from .messages import split_long_message
-from .references import load_references, search_reference
 from .storage import LocalEventStore
 
 logger = logging.getLogger(__name__)
@@ -65,11 +65,6 @@ HELP_TEXT: Final = (
 ADMIN_ONLY_NOTICE: Final = (
     "⛔ Akses ditolak. Hanya admin yang dapat mengunggah file ke bot ini."
 )
-PENDING_ASK_NOTICE: Final = (
-    "Jawaban tidak saya temukan di rujukan resmi "
-    "(KMK HK.01.07/MENKES/1186/2022 & KMK HK.01.07/MENKES/1936/2022).\n"
-    "Balas 'ya' jika ingin saya tanyakan ke AI, atau 'tidak' untuk membatalkan."
-)
 
 
 class _ChatClient(Protocol):
@@ -78,8 +73,10 @@ class _ChatClient(Protocol):
     Both the real `ChatClient` and any test double satisfy this structurally.
     """
 
-    async def complete(self, messages: Sequence[ChatMessage]) -> str: ...
-    async def analyze_document(self, text: str) -> str: ...
+    async def complete(
+        self, messages: Sequence[ChatMessage], context: str = ""
+    ) -> str: ...
+    async def analyze_document(self, text: str, context: str = "") -> str: ...
 
 
 def build_application(  # noqa: ANN201, C901, PLR0915
@@ -101,8 +98,7 @@ def build_application(  # noqa: ANN201, C901, PLR0915
     bus = EventBus()
     bus.subscribe(store)
     chat_client = client or ChatClient(settings)
-    reference_entries = load_references()
-    pending: dict[ChatId, str] = {}
+    knowledge_base = KnowledgeBase()
     app = Application.builder().token(settings.telegram_token).build()
 
     async def start(update: Update, _context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -131,11 +127,18 @@ def build_application(  # noqa: ANN201, C901, PLR0915
         chat_id: ChatId,
         question: str,
         reply: Callable[[str], Awaitable[Message]],
+        context: str = "",
     ) -> None:
-        """Run `question` through the model, persist events, and send the reply."""
+        """Run `question` through the model, persist events, and send the reply.
+
+        `context` is the Dt/ passage retrieved for this question so the model
+        answers from the official source.
+        """
         bus.publish(ChatEvent(EventType.USER_MESSAGE, chat_id, question, now()))
         try:
-            answer = await chat_client.complete(store.history(chat_id))
+            answer = await chat_client.complete(
+                store.history(chat_id), context=context
+            )
         except ModelError:
             logger.exception("Model request failed for chat %s", chat_id)
             bus.publish(ChatEvent(EventType.ERROR, chat_id, "model failure", now()))
@@ -145,40 +148,8 @@ def build_application(  # noqa: ANN201, C901, PLR0915
         for part in split_long_message(answer):
             _ = await reply(part)
 
-    async def _try_reference(
-        chat_id: ChatId,
-        question: str,
-        reply: Callable[[str], Awaitable[Message]],
-    ) -> bool:
-        """Answer from the KMK workbook when a question matches.
-
-        Returns True (and sends the reply) when a reference entry is found,
-        so the caller can skip the model fallback.
-        """
-        entry = search_reference(question, reference_entries)
-        if entry is None:
-            return False
-        answer = entry.to_text()
-        bus.publish(ChatEvent(EventType.USER_MESSAGE, chat_id, question, now()))
-        bus.publish(ChatEvent(EventType.ASSISTANT_MESSAGE, chat_id, answer, now()))
-        _ = await reply(answer)
-        return True
-
-    async def _resolve_pending(
-        chat_id: ChatId,
-        text: str,
-        reply: Callable[[str], Awaitable[Message]],
-    ) -> None:
-        """Handle a ya/tidak reply to a pending confirmation."""
-        question = pending.pop(chat_id)
-        token = text.strip().casefold()
-        if token in {"ya", "yes", "y", "ya."}:
-            await _ask_model(chat_id, question, reply)
-        else:
-            _ = await reply("Baik, pertanyaan tidak diajukan ke AI.")
-
     async def respond(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        """Answer from the KMK workbook, else gate the model behind ya/tidak."""
+        """Ground every reply in the Dt/ knowledge base, then answer directly."""
         if (
             update.effective_chat is None
             or update.message is None
@@ -189,20 +160,14 @@ def build_application(  # noqa: ANN201, C901, PLR0915
         _ = await context.bot.send_chat_action(
             chat_id=chat_id, action=ChatAction.TYPING
         )
-        if chat_id in pending:
-            await _resolve_pending(
-                chat_id, update.message.text, update.message.reply_text
-            )
-            return
-        if await _try_reference(
-            chat_id, update.message.text, update.message.reply_text
-        ):
-            return
-        pending[chat_id] = update.message.text
-        _ = await update.message.reply_text(PENDING_ASK_NOTICE)
+        question = update.message.text
+        kb_context = knowledge_base.retrieve(question)
+        await _ask_model(
+            chat_id, question, update.message.reply_text, kb_context
+        )
 
     async def ask_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        """Answer from the KMK workbook, else gate the model behind ya/tidak."""
+        """Ground the /ask question in the Dt/ knowledge base and answer directly."""
         if update.effective_chat is None or update.message is None:
             return
         chat_id = ChatId(update.effective_chat.id)
@@ -214,14 +179,8 @@ def build_application(  # noqa: ANN201, C901, PLR0915
         _ = await context.bot.send_chat_action(
             chat_id=chat_id, action=ChatAction.TYPING
         )
-        if chat_id in pending:
-            pending[chat_id] = question
-            _ = await update.message.reply_text(PENDING_ASK_NOTICE)
-            return
-        if await _try_reference(chat_id, question, update.message.reply_text):
-            return
-        pending[chat_id] = question
-        _ = await update.message.reply_text(PENDING_ASK_NOTICE)
+        kb_context = knowledge_base.retrieve(question)
+        await _ask_model(chat_id, question, update.message.reply_text, kb_context)
 
     async def handle_document(  # noqa: PLR0911
         update: Update, context: ContextTypes.DEFAULT_TYPE
@@ -277,7 +236,9 @@ def build_application(  # noqa: ANN201, C901, PLR0915
             chat_id=chat_id, action=ChatAction.TYPING
         )
         try:
-            analysis = await chat_client.analyze_document(text)
+            analysis = await chat_client.analyze_document(
+                text, context=knowledge_base.retrieve(name)
+            )
         except ModelError:
             logger.exception("Document analysis failed for chat %s", chat_id)
             bus.publish(
