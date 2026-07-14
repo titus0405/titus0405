@@ -50,3 +50,240 @@
 2026-07-13 22:36:49,457 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
 2026-07-13 22:37:00,355 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
 2026-07-13 22:37:11,008 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:37:21,495 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:37:31,786 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:37:41,989 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:37:45,822 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:37:46,822 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:37:47,338 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:37:56,026 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:38:00,700 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:38:01,454 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:38:01,861 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:38:10,957 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:38:21,198 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:38:25,773 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:38:26,551 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:38:26,968 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:38:32,274 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:38:33,172 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:38:35,941 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-13 22:38:35,942 INFO openai._base_client Retrying request to /chat/completions in 0.401399 seconds
+2026-07-13 22:38:37,376 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-13 22:38:37,380 INFO openai._base_client Retrying request to /chat/completions in 0.904812 seconds
+2026-07-13 22:38:40,265 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-13 22:38:40,268 ERROR bot_tele.bot Model request failed for chat 43743281
+Traceback (most recent call last):
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/src/bot_tele/client.py", line 72, in _request
+    response = await self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py", line 2877, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+    ...<55 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/openai/_base_client.py", line 1931, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/openai/_base_client.py", line 1716, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'OpenInference', 'is_byok': False}}, 'user_id': 'user_3CvwFcvfwDRVmqQX1lk8YB4SqYA'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/src/bot_tele/bot.py", line 138, in _ask_model
+    answer = await chat_client.complete(store.history(chat_id))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/src/bot_tele/client.py", line 57, in complete
+    return await self._request(payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/src/bot_tele/client.py", line 77, in _request
+    raise ModelError(f"Model request failed: {e}") from e
+bot_tele.errors.ModelError: Model request failed: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'OpenInference', 'is_byok': False}}, 'user_id': 'user_3CvwFcvfwDRVmqQX1lk8YB4SqYA'}
+2026-07-13 22:38:41,080 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:38:42,494 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:38:52,889 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:38:55,306 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:38:57,490 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:38:57,998 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:39:05,640 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:39:15,894 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:39:26,167 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:39:26,642 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:39:27,895 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:39:28,367 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:39:35,330 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:39:36,117 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:39:38,637 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-13 22:39:38,730 INFO openai._base_client Retrying request to /chat/completions in 0.437964 seconds
+2026-07-13 22:39:42,960 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-13 22:39:42,982 INFO openai._base_client Retrying request to /chat/completions in 0.966358 seconds
+2026-07-13 22:39:45,609 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:39:46,124 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-13 22:39:55,813 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:40:06,021 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:40:16,223 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:40:26,472 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:40:36,671 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:40:46,938 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:40:57,137 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:41:07,333 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:41:17,996 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:41:20,381 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:41:32,740 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:41:40,983 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:41:47,857 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:41:58,410 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:42:03,619 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:42:04,888 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:42:05,694 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:42:06,627 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:42:07,330 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:42:07,814 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:42:08,270 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendChatAction "HTTP/1.1 200 OK"
+2026-07-13 22:42:08,669 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:42:08,734 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/sendMessage "HTTP/1.1 200 OK"
+2026-07-13 22:42:18,867 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:42:29,148 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:42:39,406 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:42:49,831 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:43:00,032 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:43:10,329 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:43:21,036 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:43:31,460 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:43:41,724 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:43:51,970 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:44:02,206 INFO httpx HTTP Request: POST https://api.telegram.org/bot8308553263:AAGfJnwcZjJAfPkO-1i1x6LdqgNI4Km9rL4/getUpdates "HTTP/1.1 200 OK"
+2026-07-13 22:44:19,242 ERROR telegram.ext.Updater Error while calling `get_updates` one more time to mark all fetched updates. Suppressing error to ensure graceful shutdown. When polling for updates is restarted, updates may be fetched again. Please adjust timeouts via `ApplicationBuilder` or the parameter `get_updates_request` of `Bot`.
+Traceback (most recent call last):
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/request/_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/ext/_updater.py", line 400, in _get_updates_cleanup
+    await self.bot.get_updates(
+    ...<4 lines>...
+    )
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 680, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/_bot.py", line 4767, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/_bot.py", line 712, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/ext/_extbot.py", line 378, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/_bot.py", line 741, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/request/_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/Users/tituscorneliusallo/Documents/GitHub/Untitled/titus0405/venv/lib/python3.13/site-packages/telegram/request/_httpxrequest.py", line 296, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+2026-07-13 22:44:19,272 INFO telegram.ext.Application Application is stopping. This might take a moment.
+2026-07-13 22:44:19,272 INFO telegram.ext.Application Application.stop() complete
